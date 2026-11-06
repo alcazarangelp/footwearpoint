@@ -148,7 +148,7 @@ class EntregaPedidoTest extends TestCase
             ->assertSee('Pedido listo para entrega');
 
         $pedido = $this->pedido($pedidoId);
-        $this->assertSame('ENTREGADO_MAL_A_PROPOSITO', $pedido->estado); // fallo controlado U2 portafolio
+        $this->assertSame('listo_entrega', $pedido->estado);
         $this->assertNotNull($pedido->fecha_listo_entrega);
 
         // La demo da 5 días para recoger.
